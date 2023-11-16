@@ -5,7 +5,7 @@ function calculate() {
     var y2Input = document.getElementById('y2').value;
 
     if (!isValidInput(x1Input, y1Input, x2Input, y2Input)) {
-        alert('Invalid input. Please enter valid numerical values for all coordinates. ');
+        alert('Invalid input. Please enter valid numerical values for all coordinates.');
     }
 
     var x1 = parseFloat(x1Input);
@@ -14,13 +14,13 @@ function calculate() {
     var y2 = parseFloat(y2Input);
 
     if (x1 === x2 && y1 === y2){
-        alert('The points cannot be the same. Please enter different points')
+        alert('The points cannot be the same. Please enter different points.');
     }
 
-    var m = (y2 - y1) / (x2 - x1)
+    var m = (y2 - y1) / (x2 - x1);
 
     if (!isFinite(m)) {
-        alert('The slope is undefined. PLease enter different ports.')
+        alert('The slope is undefined. Please enter different points.');
     }
 
     var b = y1 - m * x1;
@@ -39,13 +39,13 @@ function drawLine(point1, point2, m, b) {
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
 
-    ctx.clearRect (0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     ctx.beginPath();
-    ctx.moveTo(point1[0], point1[1])
-    ctx.moveTo(point2[0], point2[1]);
+    ctx.moveTo(point1[0], point1[1]);
+    ctx.lineTo(point2[0], point2[1]);  // Fix this line
     ctx.strokeStyle = '#FF0000';
-    ctx.stoke();
+    ctx.stroke();
 
     var slopeText = `Slope: ${m.toFixed(2)}`;
     ctx.font = '14px Arial';
