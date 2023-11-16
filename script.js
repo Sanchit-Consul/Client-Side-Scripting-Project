@@ -48,5 +48,10 @@ function drawLine(point1, point2, m, b) {
     ctx.stoke();
 
     var slopeText = `Slope: ${m.toFixed(2)}`;
-    
+    ctx.font = '14px Arial';
+    ctx.fillStyle = '#000000';
+    ctx.fillText(slopeText, 10, 20);
+
+    var yInterceptText = `y-Intercept: ${b.toFixed(2)}`;
+    ctz.fillText(yInterceptText, 10, 40);
 }
