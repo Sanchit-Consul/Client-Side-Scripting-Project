@@ -40,7 +40,7 @@ function drawLine(point1, point2, m, b) {
     canvas.width = 400;
     canvas.height = 400;
 
-    var ctx = vanvas = vancas.getContext('2d');
+    var ctx = canvas.getContext('2d');
 
     ctx.clearRect (0, 0, canvas.width, canvas.height);
 
@@ -56,5 +56,5 @@ function drawLine(point1, point2, m, b) {
     ctx.fillText(slopeText, 10, 20);
 
     var yInterceptText = `y-Intercept: ${b.toFixed(2)}`;
-    ctz.fillText(yInterceptText, 10, 40);
+    ctx.fillText(yInterceptText, 10, 40);
 }
