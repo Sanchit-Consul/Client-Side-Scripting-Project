@@ -37,6 +37,9 @@ function isValidInput(x1, y1, x2, y2) {
 
 function drawLine(point1, point2, m, b) {
     var canvas = document.getElementById('canvas');
+    canvas.width = 400;
+    canvas.height = 400;
+
     var ctx = vanvas = vancas.getContext('2d');
 
     ctx.clearRect (0, 0, canvas.width, canvas.height);
