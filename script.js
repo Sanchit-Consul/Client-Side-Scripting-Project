@@ -43,7 +43,7 @@ function drawLine(point1, point2, m, b) {
 
     ctx.beginPath();
     ctx.moveTo(point1[0], point1[1]);
-    ctx.lineTo(point2[0], point2[1]);  // Fix this line
+    ctx.lineTo(point2[0], point2[1]);  
     ctx.strokeStyle = '#FF0000';
     ctx.stroke();
 
