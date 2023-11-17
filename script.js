@@ -1,3 +1,4 @@
+//The function to calculate the the equation, along with some lines for user-input validation
 function calculate() {
     var x1Input = document.getElementById('x1').value;
     var y1Input = document.getElementById('y1').value;
@@ -31,10 +32,12 @@ function calculate() {
     drawLine([x1, y1], [x2, y2], m, b);
 }
 
+//User-input validation
 function isValidInput(x1, y1, x2, y2) {
     return !isNaN(parseFloat(x1)) && !isNaN(parseFloat(y1)) && !isNaN(parseFloat(x2)) && !isNaN(parseFloat(y2));
 }
 
+//The function to draw the line on the graph
 function drawLine(point1, point2, m, b) {
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
