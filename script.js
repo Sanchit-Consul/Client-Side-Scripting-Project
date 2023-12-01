@@ -20,6 +20,13 @@ function calculate() {
 
     var m = (y2 - y1) / (x2 - x1);
 
+    var slopeText;
+    if ( m=== 1) {
+        slopeText = 'Slope: x';
+    } else if (m===-1) {
+        slopeText = 'Slope -x';
+    } else if
+
     if (!isFinite(m)) {
         alert('The slope is undefined. Please enter different points.');
     }
@@ -35,7 +42,7 @@ function calculate() {
 //User-input validation
 function isValidInput(x1, y1, x2, y2) {
     return !isNaN(parseFloat(x1)) && !isNaN(parseFloat(y1)) && !isNaN(parseFloat(x2)) && !isNaN(parseFloat(y2));
-}
+}z
 
 //The function to draw the line on the graph
 function drawLine(point1, point2, m, b) {
