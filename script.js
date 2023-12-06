@@ -4,15 +4,16 @@ function calculate() {
     var x2Input = document.getElementById('x2').value;
     var y2Input = document.getElementById('y2').value;
 
-    if (!isValidInput(x1Input, y1Input, x2Input, y2Input)) {
-        alert('Invalid input. Please enter valid numerical values for all coordinates.');
-        return;
-    }
-
+    // Convert input values to numbers
     var x1 = parseFloat(x1Input);
     var y1 = parseFloat(y1Input);
     var x2 = parseFloat(x2Input);
     var y2 = parseFloat(y2Input);
+
+    if (isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2)) {
+        alert('Invalid input. Please enter valid numerical values for all coordinates.');
+        return;
+    }
 
     if (x1 === x2 && y1 === y2) {
         alert('The points cannot be the same. Please enter different points.');
@@ -43,7 +44,7 @@ function calculate() {
     }
 
     var equation = `${slopeText} + ${b.toFixed(2)}`;
-    document.getElementById('result').innerText = equation;
+    document.getElementById('result').innerText = equation + `\nSlope (m): ${m.toFixed(2)}`;
 
     drawLine([x1, y1], [x2, y2], m, b);
 }
@@ -70,8 +71,21 @@ function drawLine(point1, point2, m, b) {
 
     // Draw the line
     ctx.beginPath();
-    ctx.moveTo(0, canvas.height / 2 - b * 10); // Scale factor (10) is for better visualization
-    ctx.lineTo(canvas.width, canvas.height / 2 - (m * canvas.width + b) * 10);
+
+    // Determine the intersection points of the line with the canvas edges
+    var xMin = -canvas.width / 2;
+    var xMax = canvas.width / 2;
+    var yMin = m * xMin + b;
+    var yMax = m * xMax + b;
+
+    // Adjust the coordinates to fit within the canvas
+    xMin += canvas.width / 2;
+    xMax += canvas.width / 2;
+    yMin = canvas.height / 2 - yMin * 10; // Scale factor (10) is for better visualization
+    yMax = canvas.height / 2 - yMax * 10;
+
+    ctx.moveTo(xMin, yMin);
+    ctx.lineTo(xMax, yMax);
     ctx.strokeStyle = '#FF0000';
     ctx.stroke();
 
