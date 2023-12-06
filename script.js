@@ -1,4 +1,3 @@
-//The function to calculate the the equation, along with some lines for user-input validation
 function calculate() {
     var x1Input = document.getElementById('x1').value;
     var y1Input = document.getElementById('y1').value;
@@ -29,13 +28,16 @@ function calculate() {
 
     var b = y1 - m * x1;
 
+    if (m === 0) {
+        alert('The slope is 0, meaning it\'s a horizontal line. Please change the input points so that this isn\'t the case.');
+        return;
+    }
+
     var slopeText;
     if (m === 1) {
         slopeText = 'Slope: x';
     } else if (m === -1) {
         slopeText = 'Slope: -x';
-    } else if (m === 0) {
-        slopeText = 'Slope: horizontal line (y constant)';
     } else {
         slopeText = m > 0 ? `Slope: ${m.toFixed(2)}` : `Slope: -${Math.abs(m).toFixed(2)}`;
     }
@@ -46,29 +48,51 @@ function calculate() {
     drawLine([x1, y1], [x2, y2], m, b);
 }
 
-//User-input validation
-function isValidInput(x1, y1, x2, y2) {
-    return !isNaN(parseFloat(x1)) && !isNaN(parseFloat(y1)) && !isNaN(parseFloat(x2)) && !isNaN(parseFloat(y2));
-}z
-
-//The function to draw the line on the graph
 function drawLine(point1, point2, m, b) {
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
 
+    // Calculate the scale based on canvas size
+    var scale = canvas.width / 10; // Adjust this value to control the scale
+
+    // Clear previous drawings
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+    // Draw x-axis
     ctx.beginPath();
-    ctx.moveTo(point1[0], point1[1]);
-    ctx.lineTo(point2[0], point2[1]);  
+    ctx.moveTo(0, canvas.height / 2);
+    ctx.lineTo(canvas.width, canvas.height / 2);
+    ctx.strokeStyle = '#000000';
+    ctx.stroke();
+
+    // Draw y-axis
+    ctx.beginPath();
+    ctx.moveTo(canvas.width / 2, 0);
+    ctx.lineTo(canvas.width / 2, canvas.height);
+    ctx.stroke();
+
+    // Draw the line
+    var xMin = Math.min(point1[0], point2[0]);
+    var xMax = Math.max(point1[0], point2[0]);
+    var yMin = Math.min(point1[1], point2[1]);
+    var yMax = Math.max(point1[1], point2[1]);
+
+    ctx.beginPath();
+    ctx.moveTo((xMin + xMax) / 2 * scale + canvas.width / 2, -(m * (xMin + xMax) / 2 + b) * scale + canvas.height / 2);
+    ctx.lineTo((xMax + xMin) / 2 * scale + canvas.width / 2, -(m * (xMax + xMin) / 2 + b) * scale + canvas.height / 2);
     ctx.strokeStyle = '#FF0000';
     ctx.stroke();
 
+    // Draw slope text
     var slopeText = `Slope: ${m.toFixed(2)}`;
     ctx.font = '14px Arial';
     ctx.fillStyle = '#000000';
     ctx.fillText(slopeText, 10, 20);
 
+    // Draw y-intercept text
     var yInterceptText = `y-Intercept: ${b.toFixed(2)}`;
     ctx.fillText(yInterceptText, 10, 40);
 }
+
+// Example usage with dummy data
+calculate();
