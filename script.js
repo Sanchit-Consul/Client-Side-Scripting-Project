@@ -7,6 +7,7 @@ function calculate() {
 
     if (!isValidInput(x1Input, y1Input, x2Input, y2Input)) {
         alert('Invalid input. Please enter valid numerical values for all coordinates.');
+        return;
     }
 
     var x1 = parseFloat(x1Input);
@@ -14,26 +15,32 @@ function calculate() {
     var x2 = parseFloat(x2Input);
     var y2 = parseFloat(y2Input);
 
-    if (x1 === x2 && y1 === y2){
+    if (x1 === x2 && y1 === y2) {
         alert('The points cannot be the same. Please enter different points.');
+        return;
     }
 
     var m = (y2 - y1) / (x2 - x1);
 
-    var slopeText;
-    if ( m=== 1) {
-        slopeText = 'Slope: x';
-    } else if (m===-1) {
-        slopeText = 'Slope -x';
-    } else if
-
     if (!isFinite(m)) {
         alert('The slope is undefined. Please enter different points.');
+        return;
     }
 
     var b = y1 - m * x1;
 
-    var equation = `y = ${m.toFixed(2)}x + ${b.toFixed(2)}`;
+    var slopeText;
+    if (m === 1) {
+        slopeText = 'Slope: x';
+    } else if (m === -1) {
+        slopeText = 'Slope: -x';
+    } else if (m === 0) {
+        slopeText = 'Slope: horizontal line (y constant)';
+    } else {
+        slopeText = m > 0 ? `Slope: ${m.toFixed(2)}` : `Slope: -${Math.abs(m).toFixed(2)}`;
+    }
+
+    var equation = `${slopeText} + ${b.toFixed(2)}`;
     document.getElementById('result').innerText = equation;
 
     drawLine([x1, y1], [x2, y2], m, b);
