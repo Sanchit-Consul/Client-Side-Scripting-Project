@@ -52,9 +52,6 @@ function drawLine(point1, point2, m, b) {
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
 
-    // Calculate the scale based on canvas size
-    var scale = canvas.width / 10; // Adjust this value to control the scale
-
     // Clear previous drawings
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -72,14 +69,9 @@ function drawLine(point1, point2, m, b) {
     ctx.stroke();
 
     // Draw the line
-    var xMin = Math.min(point1[0], point2[0]);
-    var xMax = Math.max(point1[0], point2[0]);
-    var yMin = Math.min(point1[1], point2[1]);
-    var yMax = Math.max(point1[1], point2[1]);
-
     ctx.beginPath();
-    ctx.moveTo((xMin + xMax) / 2 * scale + canvas.width / 2, -(m * (xMin + xMax) / 2 + b) * scale + canvas.height / 2);
-    ctx.lineTo((xMax + xMin) / 2 * scale + canvas.width / 2, -(m * (xMax + xMin) / 2 + b) * scale + canvas.height / 2);
+    ctx.moveTo(0, canvas.height / 2 - b * 10); // Scale factor (10) is for better visualization
+    ctx.lineTo(canvas.width, canvas.height / 2 - (m * canvas.width + b) * 10);
     ctx.strokeStyle = '#FF0000';
     ctx.stroke();
 
