@@ -93,6 +93,3 @@ function drawLine(point1, point2, m, b) {
     var yInterceptText = `y-Intercept: ${b.toFixed(2)}`;
     ctx.fillText(yInterceptText, 10, 40);
 }
-
-// Example usage with dummy data
-calculate();
