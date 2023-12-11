@@ -1,7 +1,33 @@
-#canvas {
-    width: 400px;
-    height: 400px;
-    border: 1px solid #ccc;
-    display: block;
-    margin: auto;
+body {
+    background-color: #333;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.calculator {
+    background-color: #444;
+    padding: 20px;
+    margin: 50px;
+    border-radius: 10px;
+}
+
+h1, h2 {
+    color: #61dafb;
+}
+
+input, button {
+    padding: 5px;
+    margin: 5px;
+    background-color: #555;
+    color: #fff;
+}
+
+button {
+    cursor: pointer;
+}
+
+canvas {
+    border: 1px solid #61dafb;
+    margin-top: 10px;
 }
