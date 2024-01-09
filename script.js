@@ -127,7 +127,7 @@ function calculateParallelLine() {
     var equation = `y = ${perpendicularSlope.toFixed(2)}x + ${yParallel - perpendicularSlope * xParallel}`;
     document.getElementById('result4').innerText = equation;
 
-    drawLine([xParallel - 10, yParallel - 10 * perpendicularSlope], [xParallel + 10, yParallel + 10 * perpendicularSlope], perpendicularSlope, yParallel - perpendicularSlope * xParallel, 'canvas4');
+    drawLineWithEquation(perpendicularSlope, yParallel - perpendicularSlope * xParallel, 'canvas4');
 }
 
 // Function to draw a line based on slope and y-intercept
