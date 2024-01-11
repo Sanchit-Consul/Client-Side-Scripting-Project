@@ -103,7 +103,8 @@ function calculateWithSlopeAndYIntercept() {
 // Calculator 4 - Parallel Line and Point
 function calculateParallelLine() {
     var parallelSlopeInput = document.getElementById('parallelSlope').value;
-    var parallelPointInput = document.getElementById('parallelPoint').value;
+    var parallelPointXInput = document.getElementById('parallelPointX').value;
+    var parallelPointYInput = document.getElementById('parallelPointY').value;
 
     var parallelSlope = parseFloat(parallelSlopeInput);
 
@@ -112,15 +113,13 @@ function calculateParallelLine() {
         return;
     }
 
-    var parallelPointCoordinates = parallelPointInput.split(',').map(coord => parseFloat(coord.trim()));
+    var xParallel = parseFloat(parallelPointXInput);
+    var yParallel = parseFloat(parallelPointYInput);
 
-    if (parallelPointCoordinates.length !== 2 || isNaN(parallelPointCoordinates[0]) || isNaN(parallelPointCoordinates[1])) {
-        alert('Invalid input. Please enter valid numerical values for the point coordinates in the format "x, y".');
+    if (isNaN(xParallel) || isNaN(yParallel)) {
+        alert('Invalid input. Please enter valid numerical values for the point coordinates.');
         return;
     }
-
-    var xParallel = parallelPointCoordinates[0];
-    var yParallel = parallelPointCoordinates[1];
 
     var perpendicularSlope = -1 / parallelSlope;
 
@@ -128,6 +127,36 @@ function calculateParallelLine() {
     document.getElementById('result4').innerText = equation;
 
     drawLineWithEquation(perpendicularSlope, yParallel - perpendicularSlope * xParallel, 'canvas4');
+}
+
+// Calculator 5 - Perpendicular Line and Point
+function calculatePerpendicularLine() {
+    var perpendicularSlopeInput = document.getElementById('perpendicularSlope').value;
+    var perpendicularPointXInput = document.getElementById('perpendicularPointX').value;
+    var perpendicularPointYInput = document.getElementById('perpendicularPointY').value;
+
+    var perpendicularSlope = parseFloat(perpendicularSlopeInput);
+
+    if (isNaN(perpendicularSlope)) {
+        alert('Invalid input. Please enter a valid numerical value for the perpendicular line slope.');
+        return;
+    }
+
+    var xPerpendicular = parseFloat(perpendicularPointXInput);
+    var yPerpendicular = parseFloat(perpendicularPointYInput);
+
+    if (isNaN(xPerpendicular) || isNaN(yPerpendicular)) {
+        alert('Invalid input. Please enter valid numerical values for the point coordinates.');
+        return;
+    }
+
+    // Calculate the slope of the line perpendicular to the given line
+    var parallelSlope = -1 / perpendicularSlope;
+
+    var equation = `y = ${parallelSlope.toFixed(2)}x + ${yPerpendicular - parallelSlope * xPerpendicular}`;
+    document.getElementById('result5').innerText = equation;
+
+    drawLineWithEquation(parallelSlope, yPerpendicular - parallelSlope * xPerpendicular, 'canvas5');
 }
 
 // Function to draw a line based on slope and y-intercept
