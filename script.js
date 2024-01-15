@@ -159,49 +159,11 @@ function calculatePerpendicularLine() {
     drawLineWithEquation(parallelSlope, yPerpendicular - parallelSlope * xPerpendicular, 'canvas5');
 }
 
-// Function to draw a line based on slope and y-intercept
-function drawLineWithEquation(slope, yIntercept, canvasId) {
-    var canvas = document.getElementById(canvasId);
-    var ctx = canvas.getContext('2d');
+// Other functions...
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    ctx.beginPath();
-    ctx.moveTo(-canvas.width / 2, canvas.height / 2 - slope * (-canvas.width / 2) - yIntercept);
-
-    var xMin = -canvas.width / 2;
-    var xMax = canvas.width / 2;
-    var yMin = slope * xMin + yIntercept;
-    var yMax = slope * xMax + yIntercept;
-
-    xMin += canvas.width / 2;
-    xMax += canvas.width / 2;
-    yMin = canvas.height / 2 - yMin * 10;
-    yMax = canvas.height / 2 - yMax * 10;
-
-    ctx.moveTo(xMin, yMin);
-    ctx.lineTo(xMax, yMax);
-    ctx.strokeStyle = '#FF0000';
-    ctx.stroke();
-
-    var slopeText;
-    if (slope === 1) {
-        slopeText = 'Slope: x';
-    } else if (slope === -1) {
-        slopeText = 'Slope: -x';
-    } else {
-        slopeText = slope > 0 ? `Slope: ${slope.toFixed(2)}` : `Slope: -${Math.abs(slope).toFixed(2)}`;
-    }
-
-    var yInterceptText = `y-Intercept: ${yIntercept.toFixed(2)}`;
-    ctx.font = '14px Arial';
-    ctx.fillStyle = '#000000';
-    ctx.fillText(slopeText, 10, 20);
-    ctx.fillText(yInterceptText, 10, 40);
-}
-
-// Example usage with dummy data
-calculate();
-calculateWithSlope();
-calculateWithSlopeAndYIntercept();
-calculateParallelLine();
+// Example usage without dummy data
+// calculate();
+// calculateWithSlope();
+// calculateWithSlopeAndYIntercept();
+// calculateParallelLine();
+// calculatePerpendicularLine();
