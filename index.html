@@ -3,86 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Line Equation Calculator</title>
     <link rel="stylesheet" href="style.css">
+    <title>Line Equation Calculator</title>
 </head>
 <body>
-    <div class="calculator">
-        <h1>Line Equation Calculator</h1>
+    <div id="calculator1">
+        <!-- Calculator 1: Two Points -->
+        <h2>Calculator 1: Two Points</h2>
+        <label for="x1">X1:</label>
+        <input type="text" id="x1" placeholder="Enter X1">
+        <label for="y1">Y1:</label>
+        <input type="text" id="y1" placeholder="Enter Y1">
+        <label for="x2">X2:</label>
+        <input type="text" id="x2" placeholder="Enter X2">
+        <label for="y2">Y2:</label>
+        <input type="text" id="y2" placeholder="Enter Y2">
+        <button id="calculateBtn1">Calculate</button>
+        <p id="result1"></p>
+        <canvas id="canvas1" width="400" height="400"></canvas>
+    </div>
 
-        <!-- Calculator 1 - Two Points -->
-        <div>
-            <h2>Calculator 1 - Two Points</h2>
-            <label for="x1">Point 1 (x): </label>
-            <input type="text" id="x1" placeholder="Enter x-coordinate">
-            <label for="y1">Point 1 (y): </label>
-            <input type="text" id="y1" placeholder="Enter y-coordinate">
-            <br>
-            <label for="x2">Point 2 (x): </label>
-            <input type="text" id="x2" placeholder="Enter x-coordinate">
-            <label for="y2">Point 2 (y): </label>
-            <input type="text" id="y2" placeholder="Enter y-coordinate">
-            <button onclick="calculate()">Calculate</button>
-            <div id="result"></div>
-            <canvas id="canvas1" width="300" height="200"></canvas>
-        </div>
+    <div id="calculator2">
+        <!-- Calculator 2: Point and Slope -->
+        <h2>Calculator 2: Point and Slope</h2>
+        <label for="x">X:</label>
+        <input type="text" id="x" placeholder="Enter X">
+        <label for="y">Y:</label>
+        <input type="text" id="y" placeholder="Enter Y">
+        <label for="slope2">Slope:</label>
+        <input type="text" id="slope2" placeholder="Enter Slope">
+        <button id="calculateBtn2">Calculate</button>
+        <p id="result2"></p>
+        <canvas id="canvas2" width="400" height="400"></canvas>
+    </div>
 
-        <!-- Calculator 2 - Point and Slope -->
-        <div>
-            <h2>Calculator 2 - Point and Slope</h2>
-            <label for="x">Point (x): </label>
-            <input type="text" id="x" placeholder="Enter x-coordinate">
-            <label for="y">Point (y): </label>
-            <input type="text" id="y" placeholder="Enter y-coordinate">
-            <br>
-            <label for="slope">Slope (m): </label>
-            <input type="text" id="slope" placeholder="Enter slope">
-            <button onclick="calculateWithSlope()">Calculate</button>
-            <div id="result2"></div>
-            <canvas id="canvas2" width="300" height="200"></canvas>
-        </div>
+    <div id="calculator3">
+        <!-- Calculator 3: Slope and Y-Intercept -->
+        <h2>Calculator 3: Slope and Y-Intercept</h2>
+        <label for="slope3">Slope:</label>
+        <input type="text" id="slope3" placeholder="Enter Slope">
+        <label for="yIntercept">Y-Intercept:</label>
+        <input type="text" id="yIntercept" placeholder="Enter Y-Intercept">
+        <button id="calculateBtn3">Calculate</button>
+        <p id="result3"></p>
+        <canvas id="canvas3" width="400" height="400"></canvas>
+    </div>
 
-        <!-- Calculator 3 - Slope and Y-Intercept -->
-        <div>
-            <h2>Calculator 3 - Slope and Y-Intercept</h2>
-            <label for="slope3">Slope (m): </label>
-            <input type="text" id="slope3" placeholder="Enter slope">
-            <label for="yIntercept">y-Intercept (b): </label>
-            <input type="text" id="yIntercept" placeholder="Enter y-intercept">
-            <button onclick="calculateWithSlopeAndYIntercept()">Calculate</button>
-            <div id="result3"></div>
-            <canvas id="canvas3" width="300" height="200"></canvas>
-        </div>
+    <div id="calculator4">
+        <!-- Calculator 4: Parallel Line and Point -->
+        <h2>Calculator 4: Parallel Line and Point</h2>
+        <label for="xParallel">X:</label>
+        <input type="text" id="xParallel" placeholder="Enter X">
+        <label for="yParallel">Y:</label>
+        <input type="text" id="yParallel" placeholder="Enter Y">
+        <label for="slopeParallel">Slope:</label>
+        <input type="text" id="slopeParallel" placeholder="Enter Slope">
+        <button id="calculateBtn4">Calculate</button>
+        <p id="result4"></p>
+        <canvas id="canvas4" width="400" height="400"></canvas>
+    </div>
 
-        <!-- Calculator 4 - Parallel Line and Point -->
-        <div>
-            <h2>Calculator 4 - Parallel Line and Point</h2>
-            <label for="parallelSlope">Parallel Line Slope: </label>
-            <input type="text" id="parallelSlope" placeholder="Enter slope">
-            <br>
-            <label for="parallelPointX">Point X: </label>
-            <input type="text" id="parallelPointX" placeholder="Enter x-coordinate">
-            <label for="parallelPointY">Point Y: </label>
-            <input type="text" id="parallelPointY" placeholder="Enter y-coordinate">
-            <button onclick="calculateParallelLine()">Calculate</button>
-            <div id="result4"></div>
-            <canvas id="canvas4" width="300" height="200"></canvas>
-        </div>
-
-<!-- Calculator 5 - Perpendicular Line and Point -->
-<div>
-    <h2>Calculator 5 - Perpendicular Line and Point</h2>
-    <label for="perpendicularSlope">Perpendicular Line Slope: </label>
-    <input type="text" id="perpendicularSlope" placeholder="Enter slope">
-    <br>
-    <label for="perpendicularPointX">Point X: </label>
-    <input type="text" id="perpendicularPointX" placeholder="Enter x-coordinate">
-    <label for="perpendicularPointY">Point Y: </label>
-    <input type="text" id="perpendicularPointY" placeholder="Enter y-coordinate">
-    <button onclick="calculatePerpendicularLine()">Calculate</button>
-    <div id="result5"></div>
-    <canvas id="canvas5" width="300" height="200"></canvas>
-</div>
+    <div id="calculator5">
+        <!-- Calculator 5: Perpendicular Line and Point -->
+        <h2>Calculator 5: Perpendicular Line and Point</h2>
+        <label for="xPerpendicular">X:</label>
+        <input type="text" id="xPerpendicular" placeholder="Enter X">
+        <label for="yPerpendicular">Y:</label>
+        <input type="text" id="yPerpendicular" placeholder="Enter Y">
+        <label for="slopePerpendicular">Slope:</label>
+        <input type="text" id="slopePerpendicular" placeholder="Enter Slope">
+        <button id="calculateBtn5">Calculate</button>
+        <p id="result5"></p>
+        <canvas id="canvas5" width="400" height="400"></canvas>
+    </div>
 
     <script src="script.js"></script>
 </body>
