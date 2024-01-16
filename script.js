@@ -145,17 +145,17 @@ function drawLine1(point1, point2, m, b) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     ctx.beginPath();
-    ctx.moveTo(point1[0], point1[1]);
-    ctx.lineTo(point2[0], point2[1]);
+    ctx.moveTo(0, b)
+    ctx.lineTo(canvas.width, m * canvas.width + b);
     ctx.strokeStyle = '#FF0000';
     ctx.stroke();
 
     var slopeText = `Slope: ${m.toFixed(2)}`;
-    ctx.font = '14px Arial';
-    ctx.fillStyle = '#000000';
-    ctx.fillText(slopeText, 10, 20);
-
     var yInterceptText = `y-Intercept: ${b.toFixed(2)}`;
+    
+    ctx.font = '14px Arial';
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fillText(slopeText, 10, 20);
     ctx.fillText(yInterceptText, 10, 40);
 }
 
@@ -166,17 +166,17 @@ function drawLine2(point, m, b) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     ctx.beginPath();
-    ctx.moveTo(point[0] - 50, m * (point[0] - 50) + b);
-    ctx.lineTo(point[0] + 50, m * (point[0] + 50) + b);
+    ctx.moveTo(0, b)
+    ctx.lineTo(canvas.width, m * canvas.width + b);
     ctx.strokeStyle = '#FF0000';
     ctx.stroke();
 
     var slopeText = `Slope: ${m.toFixed(2)}`;
-    ctx.font = '14px Arial';
-    ctx.fillStyle = '#000000';
-    ctx.fillText(slopeText, 10, 20);
-
     var yInterceptText = `y-Intercept: ${b.toFixed(2)}`;
+
+    ctx.font = '14px Arial';
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fillText(slopeText, 10, 20);
     ctx.fillText(yInterceptText, 10, 40);
 }
 
@@ -187,17 +187,17 @@ function drawLine3(m, b) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     ctx.beginPath();
-    ctx.moveTo(50, m * 50 + b);
-    ctx.lineTo(canvas.width - 50, m * (canvas.width - 50) + b);
+    ctx.moveTo(0, b)
+    ctx.lineTo(canvas.width, m * canvas.width + b);
     ctx.strokeStyle = '#FF0000';
     ctx.stroke();
 
     var slopeText = `Slope: ${m.toFixed(2)}`;
-    ctx.font = '14px Arial';
-    ctx.fillStyle = '#000000';
-    ctx.fillText(slopeText, 10, 20);
-
     var yInterceptText = `y-Intercept: ${b.toFixed(2)}`;
+
+    ctx.font = '14px Arial';
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fillText(slopeText, 10, 20);
     ctx.fillText(yInterceptText, 10, 40);
 }
 
@@ -208,17 +208,17 @@ function drawLine4(point, m, b) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     ctx.beginPath();
-    ctx.moveTo(point[0] - 50, m * (point[0] - 50) + b);
-    ctx.lineTo(point[0] + 50, m * (point[0] + 50) + b);
+    ctx.moveTo(0, b)
+    ctx.lineTo(canvas.width, m * canvas.width + b)
     ctx.strokeStyle = '#FF0000';
     ctx.stroke();
 
     var slopeText = `Slope: ${m.toFixed(2)}`;
-    ctx.font = '14px Arial';
-    ctx.fillStyle = '#000000';
-    ctx.fillText(slopeText, 10, 20);
-
     var yInterceptText = `y-Intercept: ${b.toFixed(2)}`;
+
+    ctx.font = '14px Arial';
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fillText(slopeText, 10, 20);
     ctx.fillText(yInterceptText, 10, 40);
 }
 
@@ -229,17 +229,17 @@ function drawLine5(point, m, b) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     ctx.beginPath();
-    ctx.moveTo(point[0] - 50, m * (point[0] - 50) + b);
-    ctx.lineTo(point[0] + 50, m * (point[0] + 50) + b);
+    ctx.moveTo(0, b)
+    ctx.lineTo(canvas.width, m * canvas.width + b)
     ctx.strokeStyle = '#FF0000';
     ctx.stroke();
 
     var slopeText = `Slope: ${m.toFixed(2)}`;
-    ctx.font = '14px Arial';
-    ctx.fillStyle = '#000000';
-    ctx.fillText(slopeText, 10, 20);
-
     var yInterceptText = `y-Intercept: ${b.toFixed(2)}`;
+
+    ctx.font = '14px Arial';
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fillText(slopeText, 10, 20);
     ctx.fillText(yInterceptText, 10, 40);
 }
 
