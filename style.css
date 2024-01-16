@@ -1,26 +1,43 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #333;
-    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1e1e1e;
+    color: #fff;
     margin: 0;
     padding: 0;
 }
 
+h1 {
+    color: #fff;
+}
+
 h2 {
-    color: #FFD700;
+    color: #fff;
 }
 
 label {
     display: block;
     margin-bottom: 5px;
+    color: #ddd;
 }
 
-input {
+.input-group {
+    display: flex;
     margin-bottom: 10px;
 }
 
+.coordinate-input {
+    margin-right: 20px;
+}
+
+input {
+    padding: 8px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
 button {
-    background-color: #4CAF50;
+    background-color: #008272;
     color: white;
     padding: 10px;
     border: none;
@@ -29,4 +46,5 @@ button {
 
 canvas {
     border: 1px solid #888;
+    margin-top: 10px;
 }

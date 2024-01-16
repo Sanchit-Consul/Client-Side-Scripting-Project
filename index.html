@@ -7,17 +7,32 @@
     <title>Line Equation Calculator</title>
 </head>
 <body>
+
+    <h1>Line Equation Calculator</h1>
+
     <div id="calculator1">
         <!-- Calculator 1: Two Points -->
         <h2>Calculator 1: Two Points</h2>
-        <label for="x1">X1:</label>
-        <input type="text" id="x1" placeholder="Enter X1">
-        <label for="y1">Y1:</label>
-        <input type="text" id="y1" placeholder="Enter Y1">
-        <label for="x2">X2:</label>
-        <input type="text" id="x2" placeholder="Enter X2">
-        <label for="y2">Y2:</label>
-        <input type="text" id="y2" placeholder="Enter Y2">
+        <div class="input-group">
+            <div class="coordinate-input">
+                <label for="x1">X1:</label>
+                <input type="text" id="x1" placeholder="Enter X1">
+            </div>
+            <div class="coordinate-input">
+                <label for="y1">Y1:</label>
+                <input type="text" id="y1" placeholder="Enter Y1">
+            </div>
+        </div>
+        <div class="input-group">
+            <div class="coordinate-input">
+                <label for="x2">X2:</label>
+                <input type="text" id="x2" placeholder="Enter X2">
+            </div>
+            <div class="coordinate-input">
+                <label for="y2">Y2:</label>
+                <input type="text" id="y2" placeholder="Enter Y2">
+            </div>
+        </div>
         <button id="calculateBtn1">Calculate</button>
         <p id="result1"></p>
         <canvas id="canvas1" width="400" height="400"></canvas>
@@ -26,12 +41,20 @@
     <div id="calculator2">
         <!-- Calculator 2: Point and Slope -->
         <h2>Calculator 2: Point and Slope</h2>
-        <label for="x">X:</label>
-        <input type="text" id="x" placeholder="Enter X">
-        <label for="y">Y:</label>
-        <input type="text" id="y" placeholder="Enter Y">
-        <label for="slope2">Slope:</label>
-        <input type="text" id="slope2" placeholder="Enter Slope">
+        <div class="input-group">
+            <div class="coordinate-input">
+                <label for="x">X:</label>
+                <input type="text" id="x" placeholder="Enter X">
+            </div>
+            <div class="coordinate-input">
+                <label for="y">Y:</label>
+                <input type="text" id="y" placeholder="Enter Y">
+            </div>
+        </div>
+        <div class="coordinate-input">
+            <label for="slope2">Slope:</label>
+            <input type="text" id="slope2" placeholder="Enter Slope">
+        </div>
         <button id="calculateBtn2">Calculate</button>
         <p id="result2"></p>
         <canvas id="canvas2" width="400" height="400"></canvas>
@@ -40,10 +63,14 @@
     <div id="calculator3">
         <!-- Calculator 3: Slope and Y-Intercept -->
         <h2>Calculator 3: Slope and Y-Intercept</h2>
-        <label for="slope3">Slope:</label>
-        <input type="text" id="slope3" placeholder="Enter Slope">
-        <label for="yIntercept">Y-Intercept:</label>
-        <input type="text" id="yIntercept" placeholder="Enter Y-Intercept">
+        <div class="coordinate-input">
+            <label for="slope3">Slope:</label>
+            <input type="text" id="slope3" placeholder="Enter Slope">
+        </div>
+        <div class="coordinate-input">
+            <label for="yIntercept">Y-Intercept:</label>
+            <input type="text" id="yIntercept" placeholder="Enter Y-Intercept">
+        </div>
         <button id="calculateBtn3">Calculate</button>
         <p id="result3"></p>
         <canvas id="canvas3" width="400" height="400"></canvas>
@@ -52,12 +79,20 @@
     <div id="calculator4">
         <!-- Calculator 4: Parallel Line and Point -->
         <h2>Calculator 4: Parallel Line and Point</h2>
-        <label for="xParallel">X:</label>
-        <input type="text" id="xParallel" placeholder="Enter X">
-        <label for="yParallel">Y:</label>
-        <input type="text" id="yParallel" placeholder="Enter Y">
-        <label for="slopeParallel">Slope:</label>
-        <input type="text" id="slopeParallel" placeholder="Enter Slope">
+        <div class="input-group">
+            <div class="coordinate-input">
+                <label for="xParallel">X:</label>
+                <input type="text" id="xParallel" placeholder="Enter X">
+            </div>
+            <div class="coordinate-input">
+                <label for="yParallel">Y:</label>
+                <input type="text" id="yParallel" placeholder="Enter Y">
+            </div>
+        </div>
+        <div class="coordinate-input">
+            <label for="parallelSlope">Slope of Parallel Line:</label>
+            <input type="text" id="parallelSlope" placeholder="Enter Slope">
+        </div>
         <button id="calculateBtn4">Calculate</button>
         <p id="result4"></p>
         <canvas id="canvas4" width="400" height="400"></canvas>
@@ -66,12 +101,20 @@
     <div id="calculator5">
         <!-- Calculator 5: Perpendicular Line and Point -->
         <h2>Calculator 5: Perpendicular Line and Point</h2>
-        <label for="xPerpendicular">X:</label>
-        <input type="text" id="xPerpendicular" placeholder="Enter X">
-        <label for="yPerpendicular">Y:</label>
-        <input type="text" id="yPerpendicular" placeholder="Enter Y">
-        <label for="slopePerpendicular">Slope:</label>
-        <input type="text" id="slopePerpendicular" placeholder="Enter Slope">
+        <div class="input-group">
+            <div class="coordinate-input">
+                <label for="xPerpendicular">X:</label>
+                <input type="text" id="xPerpendicular" placeholder="Enter X">
+            </div>
+            <div class="coordinate-input">
+                <label for="yPerpendicular">Y:</label>
+                <input type="text" id="yPerpendicular" placeholder="Enter Y">
+            </div>
+        </div>
+        <div class="coordinate-input">
+            <label for="perpendicularSlope">Slope of Perpendicular Line:</label>
+            <input type="text" id="perpendicularSlope" placeholder="Enter Slope">
+        </div>
         <button id="calculateBtn5">Calculate</button>
         <p id="result5"></p>
         <canvas id="canvas5" width="400" height="400"></canvas>
