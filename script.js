@@ -246,3 +246,18 @@ function drawLine5(point, m, b) {
 function isValidInput(...values) {
     return values.every(value => !isNaN(parseFloat(value)));
 }
+
+// Calculator 1 - Two Points
+document.getElementById('calculateBtn1').addEventListener('click', calculate);
+
+// Calculator 2 - Point and Slope
+document.getElementById('calculateBtn2').addEventListener('click', calculateWithSlope);
+
+// Calculator 3 - Slope and Y-Intercept
+document.getElementById('calculateBtn3').addEventListener('click', calculateWithSlopeAndYIntercept);
+
+// Calculator 4 - Parallel Line and Point
+document.getElementById('calculateBtn4').addEventListener('click', calculateParallelLine);
+
+// Calculator 5 - Perpendicular Line and Point
+document.getElementById('calculateBtn5').addEventListener('click', calculatePerpendicularLine);
